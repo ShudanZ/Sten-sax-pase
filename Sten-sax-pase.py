@@ -1,13 +1,16 @@
-
 import random
 items = ['Sten', 'Sax', 'Påse']
 dator = ""
 
+# Spelare väljer sten, sax eller påse.
 def spel(spelare):
     return spelare
 spelare_item = spel("Sax")
 
+# Dator slumpar värde från items.
 dator = random.choice(items)
+
+# Spelet loopar tills spelaren vinner datorn.
 if spelare_item == "Sten":
     while dator != "Sax":
         print("dator is", dator, "spelare is", spelare_item, "Try again.")
