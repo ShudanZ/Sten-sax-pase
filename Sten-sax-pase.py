@@ -1,32 +1,20 @@
 import random
 items = ['Sten', 'Sax', 'Påse']
 dator = ""
+spelare = ""
 
 # Spelare väljer sten, sax eller påse.
-def spel(spelare):
-    return spelare
-spelare_item = spel("Sax")
+spelare = input("Select from 'Sten', 'Sax' and 'Påse': ")
 
 # Dator slumpar värde från items.
 dator = random.choice(items)
 
 # Spelet loopar tills spelaren vinner datorn.
-if spelare_item == "Sten":
-    while dator != "Sax":
-        print("dator is", dator, "spelare is", spelare_item, "Try again.")
-        dator = random.choice(items)
-    print("dator is", dator, "spelare is", spelare_item, "You win!")
-
-if spelare_item == "Sax":
-    while dator != "Påse":
-        print("dator is", dator, "spelare is", spelare_item, "Try again.")
-        dator = random.choice(items)
-    print("dator is", dator, "spelare is", spelare_item, "You win!")
-    
-if spelare_item == "Påse":
-    while dator != "Sten":
-        print("dator is", dator, "spelare is", spelare_item, "Try again.")
-        dator = random.choice(items)
-    print("dator is", dator, "spelare is", spelare_item, "You win!")
-
+while True:
+    if ((spelare == "Sten" and dator == "Sax") or (spelare == "Sax" and dator == "Påse") or (spelare == "Påse" and dator == "Sten")):
+        print("dator is", dator, "spelare is", spelare, "You win!")
+        break 
+    print("dator is", dator, "spelare is", spelare, "Try again.")
+    dator = random.choice(items)
+    spelare = input("Select from 'Sten', 'Sax' and 'Påse': ")
 
